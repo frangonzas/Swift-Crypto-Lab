@@ -1,0 +1,13 @@
+.DS_Store
+.build/
+DerivedData/
+xcuserdata/
+*.xcuserstate
+*.xccheckout
+*.xcscmblueprint
+.env
+.env.*
+Secrets.*
+*.p8
+*.p12
+*.mobileprovision
