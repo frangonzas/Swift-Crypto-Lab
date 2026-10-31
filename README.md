@@ -1,54 +1,59 @@
 # Swift Crypto Lab
 
-> Auditable Apple-platform experiments for secure cryptographic composition.
+> Experimentos auditables con criptografía de plataforma en el ecosistema Apple.
 
-![Swift](https://img.shields.io/badge/Swift-5.9%2B-informational?logo=swift) ![Scope](https://img.shields.io/badge/scope-defensive-success)
+**Creador: Fran Gonzas · Swift 5.9+ · CryptoKit · Investigación defensiva**
 
-## Mission
+## Objetivo
 
-Understand how to use platform cryptography correctly without inventing custom algorithms.
+Aprender a componer correctamente las funciones criptográficas que proporciona el sistema **sin inventar algoritmos de cifrado propios**.
 
-### Principles
+## Principios de seguridad
 
-```text
-use vetted primitives
-authenticate encrypted data
-keep keys out of source control
-treat nonce discipline as a requirement
-never log secrets
-document assumptions
-```
+~~~text
+Utilizar primitivas criptográficas reconocidas
+Autenticar siempre los datos cifrados
+No guardar claves en el repositorio
+Respetar los requisitos de nonce e IV
+No registrar secretos en los logs
+Documentar las suposiciones de seguridad
+~~~
 
-## Included experiment
+## Ejemplo implementado
 
-`CryptoEnvelope` demonstrates authenticated encryption with `AES.GCM` using CryptoKit. The example generates an ephemeral key at runtime and intentionally contains no embedded secrets.
+\`CryptoEnvelope\` demuestra el uso de cifrado autenticado con **\`AES.GCM\` de CryptoKit**. El ejemplo genera una clave efímera durante la ejecución y no incorpora secretos en el código fuente.
 
-### Data flow
+### Flujo de datos
 
-```mermaid
+~~~mermaid
 flowchart LR
-    A[Plaintext] --> B[AES.GCM seal]
+    A[Texto original] --> B[Cifrar y autenticar con AES.GCM]
     K[SymmetricKey] --> B
-    B --> C[Combined sealed box]
-    C --> D[AES.GCM open]
+    B --> C[Contenedor cifrado combinado]
+    C --> D[Descifrar y comprobar autenticidad]
     K --> D
-    D --> E[Validated plaintext]
-```
+    D --> E[Texto validado]
+~~~
 
-## Run tests
+## Instalación y pruebas
 
-```bash
+Con Swift instalado:
+
+~~~bash
+git clone https://github.com/frangonzas/Swift-Crypto-Lab.git
+cd Swift-Crypto-Lab
 swift test
-```
+~~~
 
-## Security notes
+## Consideraciones de seguridad
 
-- This is educational sample code, not a complete key-management system.
-- Production key storage must be designed separately.
-- Do not reuse keys or copy sample architecture blindly without a threat model.
+- Este proyecto es un **ejemplo educativo**, no un sistema completo de gestión de claves.
+- El almacenamiento de claves en producción requiere un diseño independiente.
+- No reutilices claves ni traslades ejemplos a producción sin analizar previamente las amenazas.
+- Las garantías criptográficas dependen también de la protección de los extremos y de la gestión de identidades.
 
-## Scope
+Consulta la [política de seguridad](SECURITY.md).
 
-Defensive, educational and authorized research only.
+**Uso exclusivamente defensivo, educativo y autorizado.**
 
 © 2026 Fran Gonzas

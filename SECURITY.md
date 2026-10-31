@@ -1,19 +1,21 @@
-# Security Policy
+# Política de seguridad
 
-## Responsible disclosure
+## Comunicación responsable de vulnerabilidades
 
-Report security weaknesses responsibly and avoid publishing sensitive exploit details before remediation can be assessed.
+Si detectas una debilidad de seguridad, comunícala de forma responsable y evita publicar detalles de explotación antes de que pueda evaluarse y corregirse.
 
-Testing is authorized only on systems, devices and data you own or have explicit permission to test.
+Solo están autorizadas las pruebas sobre sistemas, dispositivos y datos propios o para los que dispongas de **permiso explícito**.
 
-Do not include credentials, tokens, private keys or personal data in public issues.
+No incluyas contraseñas, tokens, claves privadas ni datos personales en incidencias públicas.
 
-## Safe research principles
+## Principios de investigación responsable
 
-- minimize impact;
-- use synthetic test data;
-- avoid persistence;
-- avoid service disruption;
-- disclose responsibly.
+- Minimizar el impacto de las pruebas.
+- Utilizar datos de ensayo sintéticos.
+- Evitar la persistencia no autorizada.
+- No interrumpir servicios ni afectar a terceros.
+- Comunicar los hallazgos de manera responsable.
 
-See the profile-level policy at https://github.com/frangonzas/frangonzas/blob/main/SECURITY.md.
+Consulta también la [política general de seguridad de Fran Gonzas](https://github.com/frangonzas/frangonzas/blob/main/SECURITY.md).
+
+© 2026 Fran Gonzas
